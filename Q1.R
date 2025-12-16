@@ -32,3 +32,33 @@ plot(
   main = "Função de Distribuição Acumulada"
 )
 
+# Valor esperado
+m <- n * p
+
+# Variância
+Var <- n * p * (1 - p)
+
+# Desvio padrão
+SD <- sqrt(Var)
+
+# Resultados
+m
+Var
+SD
+
+# (a) P(X >= 20)
+# Usando o complemento 
+P_a <- 1 - pbinom(19, size = n, prob = p)
+
+# (b) P(30 < X < 43)
+# Equivalente a P(31 <= X <= 42)
+P_b <- pbinom(42, size = n, prob = p) - pbinom(30, size = n, prob = p)
+
+# (c) P(X = 31)
+P_c <- dbinom(31, size = n, prob = p)
+
+############################
+# Resultados
+P_a
+P_b
+P_c
